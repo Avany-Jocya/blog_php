@@ -1,4 +1,4 @@
-<?php echo'<pre>'; print_r($_SERVER); echo '</pre>' ?>
+<?php include('./inc/templates/haut.php') ?>
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
