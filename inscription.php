@@ -1,6 +1,10 @@
 <?php require ('./inc/init.php');?>
 
-<?php executeRequete("INSERT INTO `user` (pseudo, email, passwrd, id_user) VALUES ('test3', 'test1', '123', 0);")?>
+<?php 
+// executeRequete("INSERT INTO `user` (pseudo, email, passwrd, id_user) VALUES ('test3', 'test1', '123', 0);")
+// executeRequete("DELETE FROM blog.'user' where id_user=1");
+
+?>
 
 <?php include_once("./inc/templates/haut.php");?>
 <h1>Inscription</h1>
