@@ -1,7 +1,8 @@
 <?php require ('./inc/init.php');?>
 
 <?php 
-// executeRequete("INSERT INTO `user` (pseudo, email, passwrd, id_user) VALUES ('test3', 'test1', '123', 0);")
+executeRequete("INSERT INTO utilisateur (id_user, slug,email, passwrd,is_admin) VALUES ('test1', 'test1', '123', 0);")
+
 // executeRequete("DELETE FROM blog.'user' where id_user=1");
 
 ?>

@@ -20,6 +20,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/article.php">Article</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/inscription.php">Inscription</a>
+          </li>
           
         </ul>
        
