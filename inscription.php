@@ -16,10 +16,16 @@
 // VALUES('test', 'test', '12345', 1);")
 
 if ($_POST){
-    print_r($_POST);
+    // debug($_POST['email']);
+    $utilisateur=executeRequete("select * from utilisateur where slug='$_POST[pseudo]'");
+    if ($utilisateur->num_rows > 0){
+        // problème
+    } else {
+        executeRequete("INSERT INTO utilisateur
+        (slug, email, passwrd, is_admin)
+         VALUES('$_POST[pseudo]', '$_POST[email]', '$_POST[passwrd]', 0);");
 }
-
-
+}
 ?>
 
 <?php include_once("./inc/templates/haut.php");?>
