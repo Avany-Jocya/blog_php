@@ -6,6 +6,8 @@ services:
 
   php:
     build: './php_docker/'
+    env_file:
+      - .env
     volumes:
       - ./www/:/var/www/html
 
@@ -30,7 +32,7 @@ services:
       - blogdatabase:/var/lib/mysql
 
 #service PhpMyadmin
-  Phpmyadmin:
+  phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     ports:
       - '8081:80'

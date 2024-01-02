@@ -5,3 +5,5 @@ RUN apk update; apk upgrade;
 #copie de notre configuration du virtual host pour les requêtes php
 
 COPY apache-vhost.conf /usr/local/apache2/conf/apache-vhost.conf
+
+RUN echo "include /usr/local/apache2/conf/apache-vhost.conf"\ >> /usr/local/apache2/conf/httpd.conf

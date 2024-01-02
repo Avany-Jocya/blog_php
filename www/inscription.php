@@ -1,4 +1,4 @@
-<?php require('./www/inc/init.php');?>
+<?php require('./inc/init.php');?>
 
 <?php 
 // $result = $pdo->exec("INSERT INTO blog.user
@@ -21,16 +21,17 @@ if ($_POST) {
   if ($utilisateur->num_rows > 0) {
       $contenu .= "<div class='erreur'>Pseudo indisponible. Veuillez en choisir un autre svp.</div>";
   } else {
-      $contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href=\connexion.php ><u>Cliquez ici pour vous connecter</u></a></div>";
-      $_POST['password'] = password_hash($_POST['password'], PASSWORD_BCRYPT);
+      $_POST['passwrd'] = password_hash($_POST['passwrd'], PASSWORD_BCRYPT);
       executeRequete("INSERT INTO utilisateur
       (slug, email, passwrd, is_admin)
-       VALUES('$_POST[pseudo]', '$_POST[email]', '$_POST[password]', 0);");
+      VALUES ('$_POST[pseudo]', '$_POST[email]', '$_POST[passwrd]', 0);");
+      // $contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href="connexion.php"><u>Cliquez ici pour vous connecter</u></a></div>";
+      header("location: connexion.php");
   }
 }
 ?>
 
-<?php include_once("./www/inc/templates/haut.php");?>
+<?php include_once("./inc/templates/haut.php");?>
 <h1>Inscription</h1>
 <form method="post" >
   <div class="form-group">
@@ -47,4 +48,4 @@ if ($_POST) {
   </div>
   <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
-<?php include_once("./www/inc/templates/bas.php");?>
+<?php include_once("./inc/templates/bas.php");?>
