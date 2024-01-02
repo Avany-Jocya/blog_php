@@ -1,10 +1,15 @@
 version: ' 3.8'
 
 services:
+
+#service php
+
   php:
     build: './php_docker/'
     volumes:
       - ./www/:/var/www/html
+
+#service Apache
 
   apache:
     build: './apache_docker'
@@ -15,9 +20,25 @@ services:
     volumes:
       - ./www/:/var/www/html
 
+#service MariaDB
+
   mariadb:
     image: mariadb:11.2
     environment:
       - MYSQL_ROOT_PASSWORD=votre_mot_de_passe
     volumes:
       - blogdatabase:/var/lib/mysql
+
+#service PhpMyadmin
+  Phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - '8081:80'
+    environment:
+      - PMA_HOST=mariadb
+    depends_on:
+      - mariadb
+
+#volumes nommés gérés par Docker Engine
+volumes:
+  blogdatabase: 
