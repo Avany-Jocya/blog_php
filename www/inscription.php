@@ -25,8 +25,9 @@ if ($_POST) {
       executeRequete("INSERT INTO utilisateur
       (slug, email, passwrd, is_admin)
       VALUES ('$_POST[pseudo]', '$_POST[email]', '$_POST[passwrd]', 0);");
-      // $contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href="connexion.php"><u>Cliquez ici pour vous connecter</u></a></div>";
-      header("location: connexion.php");
+      //$contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href='connexion.php'><u>Cliquez ici pour vous connecter</u></a></div>';
+
+      // header("location: connexion.php");
   }
 }
 ?>
