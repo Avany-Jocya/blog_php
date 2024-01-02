@@ -15,16 +15,18 @@
 // (slug, email, passwrd, is_admin)
 // VALUES('test', 'test', '12345', 1);")
 
-if ($_POST){
-    // debug($_POST['email']);
-    $utilisateur=executeRequete("select * from utilisateur where slug='$_POST[pseudo]'");
-    if ($utilisateur->num_rows > 0){
-        // problème
-    } else {
-        executeRequete("INSERT INTO utilisateur
-        (slug, email, passwrd, is_admin)
-         VALUES('$_POST[pseudo]', '$_POST[email]', '$_POST[passwrd]', 0);");
-}
+if ($_POST) {
+  // debug($_POST['email']);
+  $utilisateur = executeRequete("select * from utilisateur where slug='$_POST[pseudo]'");
+  if ($utilisateur->num_rows > 0) {
+      $contenu .= "<div class='erreur'>Pseudo indisponible. Veuillez en choisir un autre svp.</div>";
+  } else {
+      $contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href=\connexion.php ><u>Cliquez ici pour vous connecter</u></a></div>";
+      $_POST['password'] = password_hash($_POST['password'], PASSWORD_BCRYPT);
+      executeRequete("INSERT INTO utilisateur
+      (slug, email, passwrd, is_admin)
+       VALUES('$_POST[pseudo]', '$_POST[email]', '$_POST[password]', 0);");
+  }
 }
 ?>
 
