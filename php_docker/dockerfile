@@ -1,0 +1,7 @@
+FROM php:8.2-fpm
+
+#installation de dépendances pour l'activation des modules nécessaires
+RUN apt-update && \ apt intall -y zip libzip-devlibpng-dev libicu-dev libxml2-dev 
+
+# installation des modules
+
