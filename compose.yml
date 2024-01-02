@@ -24,8 +24,8 @@ services:
 
   mariadb:
     image: mariadb:11.2
-    environment:
-      - MYSQL_ROOT_PASSWORD=votre_mot_de_passe
+    env_file:
+      - .env
     volumes:
       - blogdatabase:/var/lib/mysql
 
