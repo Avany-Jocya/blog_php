@@ -1,4 +1,4 @@
-<?php include('./inc/templates/haut.php') ?>
+<?php include('./www/inc/templates/haut.php') ?>
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
@@ -28,4 +28,4 @@
   </div>
 </div>
 
-<?php include('./inc/templates/bas.php') ?>
+<?php include('./www/inc/templates/bas.php') ?>

@@ -1,4 +1,4 @@
-<?php require('./inc/init.php');?>
+<?php require('./www/inc/init.php');?>
 
 <?php 
 // $result = $pdo->exec("INSERT INTO blog.user
@@ -30,7 +30,7 @@ if ($_POST) {
 }
 ?>
 
-<?php include_once("./inc/templates/haut.php");?>
+<?php include_once("./www/inc/templates/haut.php");?>
 <h1>Inscription</h1>
 <form method="post" >
   <div class="form-group">
@@ -47,4 +47,4 @@ if ($_POST) {
   </div>
   <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
-<?php include_once("./inc/templates/bas.php");?>
+<?php include_once("./www/inc/templates/bas.php");?>
