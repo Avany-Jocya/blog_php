@@ -3,7 +3,7 @@
 <div class="card" style="width: 18rem;">
  
   <div class="card-body">
-    <p class="card-text">je sais pas</p>
+    <p class="card-text">Waouhhhh</p>
   </div>
 </div>
 

@@ -2,7 +2,7 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <p class="card-text">je sais pas</p>
+    <p class="card-text">annyeonghaseyo jeoneun bangtan sonyeondan hwanggeum maknae jeon jungkook imnida</p>
   </div>
 </div>
 
