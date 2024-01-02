@@ -5,3 +5,7 @@ RUN apt-update && \ apt intall -y zip libzip-devlibpng-dev libicu-dev libxml2-de
 
 # installation des modules
 
+RUN docker-php-ext-install mysqli pdo do_mysqli gd zip intl xml
+
+#nettoyage
+RUN apt clean
