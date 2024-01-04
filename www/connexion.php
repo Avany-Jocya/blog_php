@@ -1,8 +1,10 @@
-
 <?php require('./inc/init.php'); ?>
 <?php
 //logique
+
 debug($_SESSION);
+
+
 
 if($_POST) {
     $resultat = executeRequete("SELECT * FROM utilisateur WHERE slug='$_POST[slug]'");
