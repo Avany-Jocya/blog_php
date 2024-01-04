@@ -2,10 +2,14 @@
 <?php
 //logique
 
-debug($_SESSION);
+// debug($_SESSION);
 
 if(isset($_GET['action']) && $_GET['action'] === "deconnexion"){
     session_destroy();
+}
+
+if (internauteEstConnecte()){
+    header("location: profil.php");
 }
 
 if($_POST) {
