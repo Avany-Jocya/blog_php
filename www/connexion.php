@@ -11,9 +11,9 @@ if($_POST) {
     if ($resultat->num_rows != 0){
         $utilisateur = $resultat->fetch_assoc();
         if (password_verify($_POST['passwrd'], $utilisateur['passwrd'])){
-            ///$_SESSION
+            debug($utilisateur);
         }else{
-            $contenu .='<div class="erreur">Erreur Pseudo inexistant!</div>';
+            $contenu .='<div class="erreur" >Erreur de mot de passe!</div>';
         }
     }else{
         $contenu .='<div class="erreur">Erreur Pseudo inexistant!</div>';
@@ -25,6 +25,7 @@ if($_POST) {
 
 ?>
 <?php require("./inc/templates/haut.php"); ?>
+<?php echo $contenu ?>
 <form method="post" >
 <!-- Slug input -->
 <div class="form-outline mb-4"> 
