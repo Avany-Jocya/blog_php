@@ -9,6 +9,7 @@ if ($_POST) {
     $resultat=executeRequete("select * FROM utilisateur where slug='$_POST[slug]'");
     if ($resultat->num_rows != 0){
         $utilisateur=$resultat->fetch_assoc();
+        if (password_verify($_POST['passwrd'], $utilisateur['passwrd']));
     }else{
         $contenu .='<div class="erreur">Erreur Pseudo inexistant!</div>';
     }
