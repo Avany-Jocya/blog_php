@@ -23,6 +23,12 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/inscription.php">Inscription</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/connexion.php">se connecter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/connexion.php?action=deconnexion">se déconnecter</a>
+          </li>
           
         </ul>
        

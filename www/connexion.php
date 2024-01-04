@@ -4,14 +4,21 @@
 
 debug($_SESSION);
 
-
+if(isset($_GET['action']) && $_GET['action'] === "deconnexion"){
+    session_destroy();
+}
 
 if($_POST) {
     $resultat = executeRequete("SELECT * FROM utilisateur WHERE slug='$_POST[slug]'");
     if ($resultat->num_rows != 0){
         $utilisateur = $resultat->fetch_assoc();
         if (password_verify($_POST['passwrd'], $utilisateur['passwrd'])){
-            debug($utilisateur);
+            foreach($utilisateur as $indice => $element){
+                if($indice!='passwrd'){
+                    $_SESSION['utilisateur'][$indice] = $element;
+                }
+            }
+            header ('location: profil.php');
         }else{
             $contenu .='<div class="erreur" >Erreur de mot de passe!</div>';
         }
