@@ -1,16 +1,15 @@
-<?php
 
-use LDAP\Result;
-
- include_once("./inc/templates/haut.php"); ?>
+<?php require('./inc/init.php'); ?>
 <?php
 //logique
-if ($_POST) {
-    $resultat=executeRequete("select * FROM utilisateur where slug='$_POST[slug]'");
-    if ($resultat->num_rows != 0){
-        $utilisateur=$resultat->fetch_assoc();
-        if (password_verify($_POST['passwrd'], $utilisateur['passwrd'])){
+debug($_SESSION);
 
+if($_POST) {
+    $resultat = executeRequete("SELECT * FROM utilisateur WHERE slug='$_POST[slug]'");
+    if ($resultat->num_rows != 0){
+        $utilisateur = $resultat->fetch_assoc();
+        if (password_verify($_POST['passwrd'], $utilisateur['passwrd'])){
+            ///$_SESSION
         }else{
             $contenu .='<div class="erreur">Erreur Pseudo inexistant!</div>';
         }
@@ -23,6 +22,7 @@ if ($_POST) {
 
 
 ?>
+<?php require("./inc/templates/haut.php"); ?>
 <form method="post" >
 <!-- Slug input -->
 <div class="form-outline mb-4"> 
@@ -39,4 +39,4 @@ if ($_POST) {
 <!-- Submit button -->
 <button class="btn btn-primary btn-block mb-4">Se connecter</button>
 </form>
-<?php include_once('./inc/templates/bas.php'); ?>
+<?php require_once('./inc/templates/bas.php'); ?>
